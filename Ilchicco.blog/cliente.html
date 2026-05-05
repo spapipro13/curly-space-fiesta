@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Il Chicco</title>
+    <link rel="stylesheet" href="cliente.css?v=5">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="utility-bar page-shell">
+        <button
+          class="icon-button"
+          id="menu-toggle"
+          type="button"
+          aria-controls="site-menu"
+          aria-expanded="true"
+        >
+          Menu
+        </button>
+        <span class="social">Seguici su - f ig in</span>
+        <span>Martedi 5 maggio 2026 - Aggiornato alle 17:53</span>
+        <span>15 C - Milano</span>
+        <a class="login-link" href="index.html">Accedi</a>
+      </div>
+
+      <div class="masthead page-shell">
+        <p class="kicker">quotidiano indipendente</p>
+        <h1>IL CHICCO</h1>
+        <p class="anniversary">redazione cliente</p>
+      </div>
+
+      <nav class="main-nav" id="site-menu" aria-label="Sezioni">
+        <div class="page-shell nav-inner">
+          <a href="#politica" data-section="Politica">Politica</a>
+          <a href="#esteri" data-section="Esteri">Esteri</a>
+          <a href="#opinioni" data-section="Opinioni">Opinioni</a>
+          <a href="#cronache" data-section="Cronache">Cronache</a>
+          <a href="#economia" data-section="Economia">Economia</a>
+          <a href="#cultura" data-section="Cultura">Cultura</a>
+          <a href="#sport" data-section="Sport">Sport</a>
+          <a href="#tech" data-section="Tech">Tech</a>
+          <a href="#milano" data-section="Milano">Milano</a>
+          <a class="subscribe" id="subscribe-button" href="#abbonati">Abbonati</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell empty-page" aria-label="Pagina cliente senza articoli">
+      <section class="empty-state" aria-live="polite">
+        <p class="empty-label">Sezione selezionata</p>
+        <h2 id="section-title">Home</h2>
+        <p id="section-message">Nessun articolo pubblicato in questa pagina.</p>
+      </section>
+      <section class="article-list" id="article-list" aria-label="Articoli pubblicati"></section>
+    </main>
+
+    <div class="client-modal is-hidden" id="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
+      <div class="client-modal-box">
+        <button class="modal-close" id="close-subscribe" type="button" aria-label="Chiudi popup">X</button>
+        <h2 id="subscribe-title">Abbonati a Il Chicco</h2>
+        <p>Area abbonamenti pronta. Accedi per continuare con il tuo account.</p>
+        <a class="modal-action" href="index.html">Vai al login</a>
+      </div>
+    </div>
+
+    <script src="cliente.js?v=2"></script>
+  </body>
+</html>

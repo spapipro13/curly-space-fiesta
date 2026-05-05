@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin - Il Chicco</title>
+    <link rel="stylesheet" href="cliente.css?v=5">
+    <link rel="stylesheet" href="admin.css?v=2">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="utility-bar page-shell">
+        <button
+          class="icon-button"
+          id="menu-toggle"
+          type="button"
+          aria-controls="site-menu"
+          aria-expanded="true"
+        >
+          Menu
+        </button>
+        <span class="social">Pannello redazione</span>
+        <span>Martedi 5 maggio 2026 - Aggiornato alle 17:53</span>
+        <span>15 C - Milano</span>
+        <a class="login-link" href="cliente.html">Cliente</a>
+      </div>
+
+      <div class="masthead page-shell">
+        <p class="kicker">quotidiano indipendente</p>
+        <h1>IL CHICCO</h1>
+        <p class="anniversary">area admin</p>
+      </div>
+
+      <nav class="main-nav" id="site-menu" aria-label="Sezioni">
+        <div class="page-shell nav-inner">
+          <a href="#politica" data-section="Politica">Politica</a>
+          <a href="#esteri" data-section="Esteri">Esteri</a>
+          <a href="#opinioni" data-section="Opinioni">Opinioni</a>
+          <a href="#cronache" data-section="Cronache">Cronache</a>
+          <a href="#economia" data-section="Economia">Economia</a>
+          <a href="#cultura" data-section="Cultura">Cultura</a>
+          <a href="#sport" data-section="Sport">Sport</a>
+          <a href="#tech" data-section="Tech">Tech</a>
+          <a href="#milano" data-section="Milano">Milano</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell admin-page">
+      <section class="admin-toolbar">
+        <div>
+          <p class="empty-label">Gestione articoli</p>
+          <h2 id="admin-section-title">Tutte le sezioni</h2>
+        </div>
+        <button class="add-article-button" id="add-article" type="button">
+          + Aggiungi articolo
+        </button>
+      </section>
+
+      <section class="admin-empty" id="admin-empty" aria-live="polite">
+        <h3>Nessun articolo pubblicato.</h3>
+        <p>Usa il pulsante Aggiungi articolo per aprire l'editor e creare il primo pezzo.</p>
+      </section>
+
+      <section class="admin-articles" id="admin-articles" aria-label="Articoli"></section>
+    </main>
+
+    <div class="editor-modal is-hidden" id="editor-modal" role="dialog" aria-modal="true" aria-labelledby="editor-title">
+      <div class="editor-window">
+        <header class="editor-header">
+          <h2 id="editor-title">Nuovo articolo</h2>
+          <button class="modal-close" id="close-editor" type="button" aria-label="Chiudi editor">X</button>
+        </header>
+
+        <form id="article-form" class="article-form">
+          <div class="editor-grid">
+            <label>
+              Titolo
+              <input id="article-title" type="text" placeholder="Titolo articolo" required>
+            </label>
+            <label>
+              Sezione
+              <select id="article-section" required>
+                <option>Politica</option>
+                <option>Esteri</option>
+                <option>Opinioni</option>
+                <option>Cronache</option>
+                <option>Economia</option>
+                <option>Cultura</option>
+                <option>Sport</option>
+                <option>Tech</option>
+                <option>Milano</option>
+              </select>
+            </label>
+            <label>
+              Autore
+              <input id="article-author" type="text" placeholder="Nome autore" required>
+            </label>
+          </div>
+
+          <label>
+            Sommario
+            <textarea id="article-summary" rows="3" placeholder="Breve descrizione dell'articolo"></textarea>
+          </label>
+
+          <div class="word-toolbar" aria-label="Strumenti editor">
+            <button type="button" data-command="bold" aria-label="Grassetto">B</button>
+            <button type="button" data-command="italic" aria-label="Corsivo">I</button>
+            <button type="button" data-command="underline" aria-label="Sottolineato">U</button>
+            <button type="button" data-command="insertUnorderedList" aria-label="Lista puntata">UL</button>
+            <button type="button" data-command="insertOrderedList" aria-label="Lista numerata">OL</button>
+            <button type="button" data-format="h2" aria-label="Titolo grande">H2</button>
+            <button type="button" data-format="p" aria-label="Paragrafo">P</button>
+          </div>
+
+          <div
+            class="word-editor"
+            id="article-body"
+            contenteditable="true"
+            role="textbox"
+            aria-label="Testo articolo"
+          ></div>
+
+          <div class="editor-actions">
+            <button class="secondary-button" id="cancel-editor" type="button">Annulla</button>
+            <button class="add-article-button" type="submit">Salva articolo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js?v=2"></script>
+  </body>
+</html>

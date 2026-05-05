@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accesso e registrazione</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-panel" aria-labelledby="auth-title">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <div>
+            <p class="eyebrow">Area riservata</p>
+            <h1 id="auth-title">Accedi al tuo account</h1>
+          </div>
+        </div>
+
+        <div class="mode-switch" role="tablist" aria-label="Accesso account">
+          <button
+            class="mode-button active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="login-form"
+            data-mode="login"
+          >
+            Accedi
+          </button>
+          <button
+            class="mode-button"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="register-form"
+            data-mode="register"
+          >
+            Registrati
+          </button>
+        </div>
+
+        <form id="login-form" class="auth-form" novalidate>
+          <label for="login-email">Email</label>
+          <input
+            id="login-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="nome@email.com"
+            required
+          >
+
+          <label for="login-password">Password</label>
+          <div class="password-field">
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Inserisci la password"
+              minlength="6"
+              required
+            >
+            <button type="button" data-toggle-password="login-password" aria-label="Mostra password">
+              Mostra
+            </button>
+          </div>
+
+          <div class="form-row">
+            <label class="remember">
+              <input type="checkbox" name="remember">
+              Ricordami
+            </label>
+            <a href="#">Password dimenticata?</a>
+          </div>
+
+          <p id="login-message" class="message" role="status" aria-live="polite"></p>
+
+          <button class="submit-button" type="submit">Entra</button>
+        </form>
+
+        <form id="register-form" class="auth-form is-hidden" novalidate>
+          <label for="register-name">Nome</label>
+          <input
+            id="register-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="Il tuo nome"
+            required
+          >
+
+          <label for="register-email">Email</label>
+          <input
+            id="register-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="nome@email.com"
+            required
+          >
+
+          <label for="register-password">Password</label>
+          <div class="password-field">
+            <input
+              id="register-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Almeno 6 caratteri"
+              minlength="6"
+              required
+            >
+            <button type="button" data-toggle-password="register-password" aria-label="Mostra password">
+              Mostra
+            </button>
+          </div>
+
+          <label for="confirm-password">Conferma password</label>
+          <input
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Ripeti la password"
+            minlength="6"
+            required
+          >
+
+          <p id="register-message" class="message" role="status" aria-live="polite"></p>
+
+          <button class="submit-button" type="submit">Crea account</button>
+        </form>
+
+        <p class="signup">
+          <span id="switch-copy">Non hai un account?</span>
+          <button class="text-button" type="button" data-switch-mode="register">Registrati</button>
+        </p>
+      </section>
+
+      <div id="secret-modal" class="secret-modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="secret-title">
+        <div class="secret-box">
+          <button class="modal-close" id="close-secret" type="button" aria-label="Chiudi popup">
+            X
+          </button>
+          <h2 id="secret-title">Parola d'ordine</h2>
+          <form id="secret-form" class="secret-form" novalidate>
+            <label for="secret-word">Inserisci la parola d'ordine</label>
+            <input
+              id="secret-word"
+              name="secret-word"
+              type="password"
+              autocomplete="off"
+              placeholder="Parola d'ordine"
+              required
+            >
+            <button class="submit-button" type="submit">Continua</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js?v=3"></script>
+  </body>
+</html>
